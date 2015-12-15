@@ -1,0 +1,33 @@
+#include <iomanip>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  double squareFeet;
+  int depth;
+
+  double cubicYards;
+  double totalPrice;
+
+  const double PRICE_PER_CUBIC_YD = 22.00; // the price for one cubic yard of mulch, delivered
+
+  double cubicFeet;
+
+
+  cout << "How many square feet of mulch is needed? ";
+  cin >> squareFeet;
+  cout << "how deep will your mulch need to be (in inches)? ";
+  cin >> depth;
+
+  cubicFeet = squareFeet * (static_cast<double>(depth/12));
+  cubicYards = cubicFeet / 27;
+  totalPrice = cubicYards * PRICE_PER_CUBIC_YD;
+
+  cout << "Total Cubic Yards: " << cubicYards << endl;
+  cout << "Price per Cubic Yard: " << PRICE_PER_CUBIC_YD << endl;
+  cout << "Total Cost: " << totalPrice << endl;
+  return 0;
+}
+
+
